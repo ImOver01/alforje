@@ -12,37 +12,27 @@
   box-sizing: border-box;
 }
 
-/* BODY CENTRALIZADO VERTICAL */
 body {
   margin: 0;
   background: #111;
   color: #f5f5f5;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
+}
+
+/* ===== LOADING (CENTRALIZADO NO MEIO) ===== */
+#loadingScreen {
+  position: fixed;
+  inset: 0;
+  background: #111;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  min-height: 100vh;
-  padding: 24px;
+  z-index: 10;
 }
 
-/* CONTAINER */
-.container {
-  width: 100%;
-  max-width: 420px;
-  text-align: center;
-}
-
-/* LOGO */
-.logo {
-  width: 65%;
-  max-width: 240px;
-  margin: 0 auto 28px auto;
-  display: block;
-}
-
-/* LOADING */
 .loader {
-  margin: 16px auto 0 auto;
+  margin-top: 18px;
   width: 28px;
   height: 28px;
   border: 3px solid rgba(255,255,255,0.15);
@@ -55,7 +45,23 @@ body {
   100% { transform: rotate(360deg); }
 }
 
-/* CONTEÚDO FINAL */
+/* ===== CONTEÚDO NORMAL (COMO ESTAVA ANTES) ===== */
+
+.container {
+  width: 100%;
+  max-width: 480px;
+  margin: 0 auto;
+  padding: 48px 22px 60px 22px;
+  text-align: center;
+}
+
+.logo {
+  width: 65%;
+  max-width: 260px;
+  margin: 0 auto 36px auto;
+  display: block;
+}
+
 #content {
   display: none;
   animation: fadeIn 1.4s ease forwards;
@@ -89,21 +95,19 @@ p {
 
 <body>
 
+<!-- ===== LOADING ===== -->
+<div id="loadingScreen">
+  <img src="alforje_logo.png" class="logo" alt="Alforje Logo">
+  <div class="loader"></div>
+</div>
+
+<!-- ===== CONTEÚDO ===== -->
 <div class="container">
-
-  <!-- TELA DE LOADING -->
-  <div id="loadingScreen">
-    <img src="alforje_logo.png" class="logo" alt="Alforje Logo">
-    <div class="loader"></div>
-  </div>
-
-  <!-- CONTEÚDO -->
   <div id="content">
     <img src="alforje_logo.png" class="logo" alt="Alforje Logo">
     <h2 id="titulo">Carregando...</h2>
     <p id="descricao"></p>
   </div>
-
 </div>
 
 <script>
