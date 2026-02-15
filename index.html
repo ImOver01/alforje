@@ -81,7 +81,7 @@ p {
 }
 
 .highlight {
-  color: #dbe3ff;
+  color: #6988fa;
   font-weight: 600;
 }
 
@@ -142,20 +142,22 @@ setTimeout(() => {
       titulo.innerHTML = `Olá, <span class="highlight">${info.cliente}</span>!`;
 
       descricao.innerHTML = `
-        Obrigado por permitir que a <span class="highlight">Alforje</span> 
-        desenvolvesse uma fragrância que carrega a sua identidade.
+        É um prazer imenso para a <span class="highlight">ALFORJE</span> 
+        desenvolver uma fragrância que carrega um pedacinho da sua identidade.
 
         <br><br>
 
-        <span class="highlight">${info.perfume}</span> não é apenas um perfume — 
-        é uma composição exclusiva construída a partir das notas de 
+        Desenvolvemos uma inspiração totalmente exclusiva do <span class="highlight">${info.perfume}</span>
+        especialmente para você, construída a partir das notas de 
         ${info.notas}, cuidadosamente equilibradas para expressar presença, 
         autenticidade e personalidade.
 
         <br><br>
 
-        Esta unidade foi preparada individualmente, tornando-a única no mundo. 
-        Nenhum frasco é igual ao outro — assim como nenhuma pessoa é.
+        Na ALFORJE nenhum perfume é igual ao outro, assim como nenhuma
+        pessoa também é.
+
+        Obrigado, <span class="highlight">${info.cliente}</span>!
       `;
     })
     .catch(() => {
