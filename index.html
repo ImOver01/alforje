@@ -18,7 +18,7 @@ body {
   background: #111;
   color: #f5f5f5;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  padding: 48px 22px 60px 22px; /* respiro lateral elegante */
+  padding: 48px 22px 60px 22px;
   display: flex;
   justify-content: center;
 }
@@ -69,15 +69,16 @@ body {
 }
 
 h2 {
-  font-size: 24px;
+  font-size: 26px;
   font-weight: 500;
-  margin-bottom: 26px;
+  margin-bottom: 32px;
 }
 
 p {
   font-size: 16px;
-  line-height: 1.85;
-  opacity: 0.9;
+  line-height: 1.9;
+  opacity: 0.92;
+  letter-spacing: 0.2px;
 }
 
 .highlight {
@@ -143,19 +144,20 @@ setTimeout(() => {
 
       descricao.innerHTML = `
         É um prazer imenso para a <span class="highlight">ALFORJE</span> 
-        desenvolver uma fragrância que carrega um pedacinho da sua identidade.
+        criar uma fragrância que carrega um fragmento da sua identidade.
 
         <br><br>
 
-        Desenvolvemos uma inspiração totalmente exclusiva do <span class="highlight">${info.perfume}</span>
-        especialmente para você, construída a partir das notas de 
-        ${info.notas}, cuidadosamente equilibradas para expressar presença, 
+        <span class="highlight">${info.perfume}</span> foi desenvolvido 
+        exclusivamente para você, construído a partir das notas de 
+        ${info.notas}, cuidadosamente harmonizadas para traduzir presença, 
         autenticidade e personalidade.
 
         <br><br>
 
-        Na <span class="highlight">ALFORJE</span> nenhum perfume é igual ao outro, assim como nenhuma
-        pessoa também é, e este foi feito exclusivamente para você.
+        Na <span class="highlight">ALFORJE</span>, nenhum perfume é igual ao outro —
+        assim como nenhuma pessoa é. Esta unidade foi criada exclusivamente
+        para você.
       `;
     })
     .catch(() => {
