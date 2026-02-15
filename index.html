@@ -12,40 +12,39 @@
   box-sizing: border-box;
 }
 
-/* BASE MOBILE FIRST */
+/* BODY CENTRALIZADO VERTICAL */
 body {
   margin: 0;
   background: #111;
   color: #f5f5f5;
   font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Arial, sans-serif;
-  padding: 48px 22px 60px 22px;
   display: flex;
   justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  padding: 24px;
 }
 
-/* CONTAINER CENTRAL */
+/* CONTAINER */
 .container {
   width: 100%;
-  max-width: 480px;
+  max-width: 420px;
+  text-align: center;
 }
 
 /* LOGO */
 .logo {
   width: 65%;
-  max-width: 260px;
-  margin: 0 auto 36px auto;
+  max-width: 240px;
+  margin: 0 auto 28px auto;
   display: block;
 }
 
 /* LOADING */
-#loadingScreen {
-  text-align: center;
-}
-
 .loader {
-  margin: 20px auto 0 auto;
-  width: 32px;
-  height: 32px;
+  margin: 16px auto 0 auto;
+  width: 28px;
+  height: 28px;
   border: 3px solid rgba(255,255,255,0.15);
   border-top: 3px solid #ffcb3d;
   border-radius: 50%;
@@ -59,8 +58,7 @@ body {
 /* CONTEÚDO FINAL */
 #content {
   display: none;
-  text-align: center;
-  animation: fadeIn 1.6s ease forwards;
+  animation: fadeIn 1.4s ease forwards;
   opacity: 0;
 }
 
@@ -69,21 +67,21 @@ body {
 }
 
 h2 {
-  font-size: 26px;
+  font-size: 22px;
   font-weight: 500;
-  margin-bottom: 32px;
+  margin-bottom: 22px;
 }
 
 p {
-  font-size: 16px;
-  line-height: 1.9;
-  opacity: 0.92;
+  font-size: 14.5px;
+  line-height: 1.6;
+  opacity: 0.9;
   letter-spacing: 0.2px;
 }
 
 .highlight {
   color: #ffdd80;
-  font-weight: bold;
+  font-weight: 600;
 }
 
 </style>
@@ -99,7 +97,7 @@ p {
     <div class="loader"></div>
   </div>
 
-  <!-- CONTEÚDO PRINCIPAL -->
+  <!-- CONTEÚDO -->
   <div id="content">
     <img src="alforje_logo.png" class="logo" alt="Alforje Logo">
     <h2 id="titulo">Carregando...</h2>
@@ -143,21 +141,17 @@ setTimeout(() => {
       titulo.innerHTML = `Olá, <span class="highlight">${info.cliente}</span>!`;
 
       descricao.innerHTML = `
-        É um prazer imenso para a <span class="highlight">ALFORJE</span> 
-        criar uma fragrância que carrega um fragmento da sua identidade.
+        A <span class="highlight">ALFORJE</span> criou 
+        <span class="highlight">${info.perfume}</span> exclusivamente para você.
 
         <br><br>
 
-        <span class="highlight">${info.perfume}</span> foi desenvolvido 
-        exclusivamente para você, construído a partir das notas de 
-        ${info.notas}, cuidadosamente harmonizadas para traduzir presença, 
-        autenticidade e personalidade.
+        Desenvolvido a partir das notas de ${info.notas},
+        esta fragrância traduz sua identidade em uma composição única.
 
         <br><br>
 
-        Na <span class="highlight">ALFORJE</span>, nenhum perfume é igual ao outro —
-        assim como nenhuma pessoa é. Esta unidade foi criada exclusivamente
-        para você.
+        Esta unidade é exclusiva. Não existe outra igual.
       `;
     })
     .catch(() => {
@@ -165,7 +159,7 @@ setTimeout(() => {
       descricao.innerHTML = "Não foi possível carregar os dados.";
     });
 
-}, 3000);
+}, 4000); // 4 segundos
 
 </script>
 
