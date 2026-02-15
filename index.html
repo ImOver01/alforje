@@ -109,29 +109,37 @@ setTimeout(() => {
   }
 
   fetch("data.json")
-    .then(response => response.json())
-    .then(data => {
+  .then(response => response.json())
+  .then(data => {
 
-      if (!data[pedido]) {
-        titulo.innerHTML = "Pedido não encontrado";
-        descricao.innerHTML = `Código: <span class="highlight">${pedido}</span>`;
-        return;
-      }
+    if (!data[pedido]) {
+      titulo.innerHTML = "Pedido não encontrado";
+      descricao.innerHTML = `Código: <span class="highlight">${pedido}</span>`;
+      return;
+    }
 
-      const info = data[pedido];
+    const info = data[pedido];
 
-      titulo.innerHTML = `Olá, <span class="highlight">${info.cliente}</span>!`;
+    titulo.innerHTML = `Olá, <span class="highlight">${info.cliente}</span>!`;
 
-      descricao.innerHTML = `
-        Seu perfume <span class="highlight">${info.perfume}</span> está pronto.<br><br>
-        <strong>Notas olfativas:</strong><br>
-        ${info.notas}
-      `;
-    })
-    .catch(() => {
-      titulo.innerHTML = "Erro ao carregar";
-      descricao.innerHTML = "Não foi possível carregar os dados.";
-    });
+    descricao.innerHTML = `
+      Obrigado por permitir que a <span class="highlight">Alforje</span> desenvolvesse 
+      uma fragrância que carrega a sua identidade.
+
+      <br><br>
+
+      <span class="highlight">${info.perfume}</span> não é apenas um perfume — 
+      é uma composição exclusiva construída a partir das notas de 
+      ${info.notas}, cuidadosamente equilibradas para expressar presença, 
+      autenticidade e personalidade.
+
+      <br><br>
+
+      Esta unidade foi preparada individualmente, tornando-a única no mundo. 
+      Nenhum frasco é igual ao outro — assim como nenhuma pessoa é.
+    `;
+  })
+
 
 }, 3000); // 3 segundos de loading
 </script>
